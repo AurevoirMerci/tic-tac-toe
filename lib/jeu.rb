@@ -1,4 +1,6 @@
 require 'controller'
+require 'colorize'
+
 
 class Jeu 
 	attr_reader :player1, :player2
@@ -40,7 +42,6 @@ class Jeu
 			if possibilities.include?(pion_player1)
 			coups_player1 << pion_player1
 			possibilities.delete(pion_player1)
-			number_of_round += 1
 			else
 				while !possibilities.include?(pion_player1)
 					puts "Pas possible boss. Tu joues-où du coup bg?"
@@ -48,7 +49,7 @@ class Jeu
 				end
 				coups_player1 << pion_player1
 				possibilities.delete(pion_player1)
-				number_of_round += 1
+				
 			
 		end
 	end
@@ -78,20 +79,22 @@ class Jeu
 			@I = "X"
 		end
 
-		puts " " * 5 + " " * 5 + "A" + " " * 10 + "B" + " " * 11 + "C"
+		puts " " * 5 + " " * 5 + "A".colorize(:red) + " " * 10 + "B".colorize(:red) + " " * 11 + "C".colorize(:red)
 		puts " " * 5 + "-" * 34
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "1" + " " * 2 + "|" + " " * 4 + @A + " " * 5 + "|" + " " * 4 + @D + " " * 5+ "|" + " " * 5 + @G + " " * 4 + "|"
-		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 5 + "-" * 34
-		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "2" + " " * 2 + "|" + " " * 4 + @B + " " * 5 + "|" + " " * 4 + @E + " " * 5+ "|" + " " * 5 + @H + " " * 4 + "|"
+		puts " " * 2 + "1".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @A.colorize(:green) + " " * 5 + "|" + " " * 4 + @D.colorize(:green) + " " * 5+ "|" + " " * 5 + @G.colorize(:green) + " " * 4 + "|"
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
 		puts " " * 5 + "-" * 34
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "3" + " " * 2 + "|" + " " * 4 + @C + " " * 5 + "|" + " " * 4 + @F + " " * 5+ "|" + " " * 5 + @I + " " * 4 + "|"
+		puts " " * 2 + "2".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @B.colorize(:green) + " " * 5 + "|" + " " * 4 + @E.colorize(:green) + " " * 5+ "|" + " " * 5 + @H.colorize(:green) + " " * 4 + "|"
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
 		puts " " * 5 + "-" * 34
+		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
+		puts " " * 2 + "3".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @C.colorize(:green) + " " * 5 + "|" + " " * 4 + @F.colorize(:green) + " " * 5+ "|" + " " * 5 + @I.colorize(:green) + " " * 4 + "|"
+		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
+		puts " " * 5 + "-" * 34
+
+		number_of_round += 1
 
 		if coups_player1.sort! & winning_combination1 == winning_combination1 || coups_player1.sort! & winning_combination2 == winning_combination2 || coups_player1.sort! & winning_combination3 == winning_combination3 || coups_player1.sort! & winning_combination4 == winning_combination4 || coups_player1.sort! & winning_combination5 == winning_combination5 || coups_player1.sort! & winning_combination6 == winning_combination6 || coups_player1.sort! & winning_combination7 == winning_combination7 || coups_player1.sort! & winning_combination8 == winning_combination8
 		break
@@ -137,18 +140,18 @@ class Jeu
 			@I = "Y"
 		end
 
-		puts " " * 5 + " " * 5 + "A" + " " * 10 + "B" + " " * 11 + "C"
+		puts " " * 5 + " " * 5 + "A".colorize(:red) + " " * 10 + "B".colorize(:red) + " " * 11 + "C".colorize(:red)
 		puts " " * 5 + "-" * 34
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "1" + " " * 2 + "|" + " " * 4 + @A + " " * 5 + "|" + " " * 4 + @D + " " * 5 + "|" + " " * 5 + @G + " " * 4 + "|"
-		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 5 + "-" * 34
-		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "2" + " " * 2 + "|" + " " * 4 + @B + " " * 5 + "|" + " " * 4 + @E + " " * 5+ "|" + " " * 5 + @H + " " * 4 + "|"
+		puts " " * 2 + "1".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @A.colorize(:green) + " " * 5 + "|" + " " * 4 + @D.colorize(:green) + " " * 5 + "|" + " " * 5 + @G.colorize(:green) + " " * 4 + "|"
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
 		puts " " * 5 + "-" * 34
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
-		puts " " * 2 + "3" + " " * 2 + "|" + " " * 4 + @C + " " * 5 + "|" + " " * 4 + @F + " " * 5+ "|" + " " * 5 + @I + " " * 4 + "|"
+		puts " " * 2 + "2".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @B.colorize(:green) + " " * 5 + "|" + " " * 4 + @E.colorize(:green) + " " * 5+ "|" + " " * 5 + @H.colorize(:green) + " " * 4 + "|"
+		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
+		puts " " * 5 + "-" * 34
+		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
+		puts " " * 2 + "3".colorize(:yellow) + " " * 2 + "|" + " " * 4 + @C.colorize(:green) + " " * 5 + "|" + " " * 4 + @F.colorize(:green) + " " * 5+ "|" + " " * 5 + @I.colorize(:green) + " " * 4 + "|"
 		puts " " * 5 + "|" + " " * 10 + "|" + " " * 10 + "|" + " " * 10 + "|"
 		puts " " * 5 + "-" * 34
 

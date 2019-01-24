@@ -10,8 +10,9 @@ class Router
 		puts "Bienvenue dans notre super jeu : le Tic-Tac-Toe."
 
 		while true 
-			puts "Que veux tu faire ?"
-			puts "1. je veux gamer nrv"
+			puts "Que veux tu faire jeune moussaillon ?"
+			puts "-" * 30
+			puts "1. Je veux gamer, ça à l'air trop cool !"
 			puts "2. Ton jeu est naze, je me tire"
 			answer = gets.chomp.to_i
 

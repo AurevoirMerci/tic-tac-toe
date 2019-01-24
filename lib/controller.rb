@@ -10,10 +10,7 @@ class Controller
 	def start_game
 		answer = @view.start_game
 		jeu = Jeu.new(answer[:player1], answer[:player2])
-		
-
-
-		while jeu.play_game
+		jeu.play_game
 	end
 
 end
