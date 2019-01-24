@@ -1,5 +1,6 @@
 require 'bundler'
 require 'colorize'
+require 'emoji'
 Bundler.require 
 
 $:.unshift File.expand_path("./../lib", __FILE__)
