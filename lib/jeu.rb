@@ -147,23 +147,23 @@ class Jeu
 	  end
 
 	  if pion_player2 == "A1"
-		@A = "Y"
+		@A = "O"
 	  elsif pion_player2 == "A2"
-		@B = "Y"
+		@B = "O"
 	  elsif pion_player2 == "A3"
-		@C = "Y"
+		@C = "O"
 	  elsif pion_player2 == "B1"
-		@D = "Y"
+		@D = "O"
 	  elsif pion_player2 == "B2"
-		@E = "Y"
+		@E = "O"
 	  elsif pion_player2 == "B3"
-		@F = "Y"
+		@F = "O"
 	  elsif pion_player2 == "C1"
-		@G = "Y"
+		@G = "O"
 	  elsif pion_player2 == "C2"
-		@H = "Y"
+		@H = "O"
 	  elsif pion_player2 == "C3"
-		@I = "Y"
+		@I = "O"
 	  end
 
 	  puts " " * 5 + " " * 5 + "A".colorize(:red) + " " * 10 + "B".colorize(:red) + " " * 11 + "C".colorize(:red)
